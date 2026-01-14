@@ -3,6 +3,7 @@ import App from "../App";
 import Register from "../Page/Register/Register";
 import Login from "../Page/Login/Login";
 import AdminDashBoard from "../Page/DashBoard/AdminDashBoard/AdminDashBoard";
+import User from "../Components/User/User";
 
 export const route = () =>
   createBrowserRouter([
@@ -30,7 +31,7 @@ export const route = () =>
         },
         {
           path: "users",
-          element: <j />,
+          element: <User />,
         },
         {
           path: "genre",
