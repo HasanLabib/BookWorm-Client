@@ -4,6 +4,7 @@ import Register from "../Page/Register/Register";
 import Login from "../Page/Login/Login";
 import AdminDashBoard from "../Page/DashBoard/AdminDashBoard/AdminDashBoard";
 import User from "../Components/User/User";
+import Genre from "../Components/Genre/Genre";
 
 export const route = () =>
   createBrowserRouter([
@@ -35,7 +36,7 @@ export const route = () =>
         },
         {
           path: "genre",
-          element: <j />,
+          element: <Genre />,
         },
       ],
     },
