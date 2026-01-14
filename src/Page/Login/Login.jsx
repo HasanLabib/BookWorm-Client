@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { UserAuthContext } from "../../Provider/AuthProvider/AuthContext";
 import { toast } from "react-toastify";
+import { Navigate, useNavigate } from "react-router";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -36,6 +37,7 @@ const Login = () => {
 
       toast.success("Login successful");
       await getUser();
+      Navigate(user.role === "admin" ? "/dashboard" : "/book");
 
       console.log(res.data);
     } catch (err) {

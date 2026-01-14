@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { UserAuthContext } from "../../Provider/AuthProvider/AuthContext";
+import { Navigate } from "react-router";
 
 const Register = () => {
   const [error, setError] = useState(" ");
@@ -67,6 +68,7 @@ const Register = () => {
       });
       console.log(res.data);
       await getUser();
+      Navigate(user.role === "admin" ? "/dashboard" : "/book");
 
       toast.success("Registration successful");
     } catch (err) {

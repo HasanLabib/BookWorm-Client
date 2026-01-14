@@ -74,7 +74,7 @@ const Book = () => {
   };
 
   return (
-    <section className="min-h-screen bg-base-200 p-4 md:p-8">
+    <section className="min-h-screen bg-base-200 p-4 md:p-8 w-11/12 mx-auto">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
           <h1 className="text-3xl font-bold">Books Library</h1>

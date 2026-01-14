@@ -6,20 +6,43 @@ import AdminDashBoard from "../Page/DashBoard/AdminDashBoard/AdminDashBoard";
 import User from "../Components/User/User";
 import Genre from "../Components/Genre/Genre";
 import Book from "../Components/Book/Book";
+import PrivateRouteProvide from "../Provider/PrivateRouteProvider/PrivateRouteProvide";
+import BookList from "../Components/Reading/BookList";
+import AuthRoute from "../Provider/PrivateRouteProvider/AuthRoute";
 
 export const route = () =>
   createBrowserRouter([
     {
       path: "/",
-      Component: App,
+      element: (
+        <PrivateRouteProvide>
+          <App />
+        </PrivateRouteProvide>
+      ),
       children: [
         {
           path: "/register",
-          element: <Register />,
+          element: (
+            <AuthRoute>
+              <Register />
+            </AuthRoute>
+          ),
         },
         {
           path: "/login",
-          element: <Login />,
+          element: (
+            <AuthRoute>
+              <Login />
+            </AuthRoute>
+          ),
+        },
+        {
+          path: "/book",
+          element: (
+            <PrivateRouteProvide>
+              <BookList />
+            </PrivateRouteProvide>
+          ),
         },
       ],
     },
@@ -29,15 +52,27 @@ export const route = () =>
       children: [
         {
           path: "viewBook",
-          element: <Book />,
+          element: (
+            <PrivateRouteProvide>
+              <Book />
+            </PrivateRouteProvide>
+          ),
         },
         {
           path: "users",
-          element: <User />,
+          element: (
+            <PrivateRouteProvide>
+              <User />
+            </PrivateRouteProvide>
+          ),
         },
         {
           path: "genre",
-          element: <Genre />,
+          element: (
+            <PrivateRouteProvide>
+              <Genre />
+            </PrivateRouteProvide>
+          ),
         },
       ],
     },
