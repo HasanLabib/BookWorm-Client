@@ -70,7 +70,8 @@ const Register = () => {
 
       toast.success("Registration successful");
     } catch (err) {
-      console.log(err);
+      const msg = err?.response?.data?.message || "Registration failed";
+      toast.error(msg);
     } finally {
       setLoading(false);
     }

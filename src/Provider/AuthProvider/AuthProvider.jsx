@@ -30,13 +30,6 @@ const AuthProvider = ({ children }) => {
     getUser();
   }, []);
 
-  const login = async (email, password) => {
-    const res = await axios.post("/login", {
-      email,
-      password,
-    });
-    setUser(res.data.user);
-  };
 
   const logout = async () => {
     await axios.post("/logout");
