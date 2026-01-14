@@ -10,7 +10,7 @@ const useGenreHook = () => {
     const fetchGenre = async () => {
       try {
         setLoading(true);
-        const result = await axios.get("/genre");
+        const result = await axios.get("/genre",{ withCredentials: true });
 
         setAllGenre(result.data.genres);
         console.log(result.data);

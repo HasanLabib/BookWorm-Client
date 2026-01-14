@@ -13,8 +13,8 @@ const NavBar = () => {
   useEffect(() => {
     const fetchPhoto = () => {
       if (user) {
-        const { photoURL } = user;
-        setPhoto(photoURL);
+        const { photo } = user;
+        setPhoto(photo);
       }
     };
     fetchPhoto();
@@ -84,9 +84,6 @@ const NavBar = () => {
                 <div className=" menu bg-base-200 rounded-box w-full">
                   {link}
                 </div>
-                {/* <div className="flex justify-end p-4">
-                  <ThemeToggle />
-                </div> */}
               </ul>
             </div>
             <NavLink to={`/`} className="btn btn-ghost text-xl">
@@ -110,8 +107,8 @@ const NavBar = () => {
                     <div className="w-10 rounded-full">
                       <img
                         alt="Tailwind CSS Navbar component"
-                        src={photo}
-                        title={user?.displayName}
+                        src={user?.photo}
+                        title={user?.name}
                       />
                     </div>
                   </div>
@@ -121,16 +118,6 @@ const NavBar = () => {
                   >
                     <li>
                       <button className="btn">{user.displayName}</button>
-                    </li>
-                    <li>
-                      <NavLink to={`/profile`} className="btn">
-                        My Profile
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to={`/dashboard`} className="btn">
-                        Dashboard
-                      </NavLink>
                     </li>
 
                     <li>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { UserAuthContext } from "./AuthContext";
 
-axios.defaults.baseURL = "http://localhost:3000";
+axios.defaults.baseURL = "https://book-worm-server-chi.vercel.app";
 axios.defaults.withCredentials = true;
 
 const AuthProvider = ({ children }) => {
@@ -30,14 +30,15 @@ const AuthProvider = ({ children }) => {
     getUser();
   }, []);
 
-
   const logout = async () => {
     await axios.post("/logout");
     setUser(null);
   };
 
   return (
-    <UserAuthContext.Provider value={{ user, loadingProvider, getUser }}>
+    <UserAuthContext.Provider
+      value={{ user, loadingProvider, logout, getUser }}
+    >
       {children}
     </UserAuthContext.Provider>
   );

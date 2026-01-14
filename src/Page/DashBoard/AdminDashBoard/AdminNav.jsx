@@ -2,7 +2,15 @@ import React, { useContext } from "react";
 import { UserAuthContext } from "../../../Provider/AuthProvider/AuthContext";
 
 const AdminNav = () => {
-  const { user } = useContext(UserAuthContext);
+  const { user, logout } = useContext(UserAuthContext);
+  const handleSignOut = async () => {
+    try {
+      const result = await logout();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="navbar-end w-[86%]">
       <div className="dropdown dropdown-end">
@@ -20,7 +28,9 @@ const AdminNav = () => {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a>Logout</a>
+            <NavLink onClick={handleSignOut} className="btn">
+              Logout
+            </NavLink>
           </li>
         </ul>
       </div>

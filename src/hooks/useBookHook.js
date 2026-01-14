@@ -6,7 +6,7 @@ const useBookHook = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("/books").then((res) => {
+    axios.get("/books",{ withCredentials: true }).then((res) => {
       setAllBooks(res.data.books);
       setLoading(false);
     });

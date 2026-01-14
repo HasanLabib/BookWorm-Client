@@ -19,7 +19,7 @@ const BookList = () => {
   const [minRating, setMinRating] = useState(0);
   const [sort, setSort] = useState("");
   const fetchBooks = async () => {
-    const res = await axios.get("/books-paginated", {
+    const res = await axios.get("/books", {
       params: {
         page,
         search,
