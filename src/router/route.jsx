@@ -5,6 +5,7 @@ import Login from "../Page/Login/Login";
 import AdminDashBoard from "../Page/DashBoard/AdminDashBoard/AdminDashBoard";
 import User from "../Components/User/User";
 import Genre from "../Components/Genre/Genre";
+import Book from "../Components/Book/Book";
 
 export const route = () =>
   createBrowserRouter([
@@ -28,7 +29,7 @@ export const route = () =>
       children: [
         {
           path: "viewBook",
-          element: <j />,
+          element: <Book />,
         },
         {
           path: "users",
