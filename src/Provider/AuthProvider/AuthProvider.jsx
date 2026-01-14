@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { UserAuthContext } from "./AuthContext";
 
-axios.defaults.baseURL = "https://book-worm-server-chi.vercel.app";
+axios.defaults.baseURL = "/api";
 axios.defaults.withCredentials = true;
 
 const AuthProvider = ({ children }) => {
