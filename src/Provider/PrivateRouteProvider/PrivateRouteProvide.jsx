@@ -1,11 +1,11 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 
 import { Navigate, useLocation } from "react-router";
 import { ClimbingBoxLoader } from "react-spinners";
 import { UserAuthContext } from "../AuthProvider/AuthContext";
 
 const PrivateRouteProvide = ({ children }) => {
-  const { user, loading } = useContext(UserAuthContext);
+  const { user, loadingProvider: loading } = useContext(UserAuthContext);
   const location = useLocation();
 
   if (loading) {

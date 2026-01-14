@@ -7,7 +7,7 @@ axios.defaults.withCredentials = true;
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loadingProvider, setLoadingProvider] = useState(false);
+  const [loadingProvider, setLoadingProvider] = useState(true);
   const getUser = async () => {
     setLoadingProvider(true);
     try {
