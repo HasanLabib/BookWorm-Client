@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import { Navigate, useLocation } from "react-router";
 import { ClimbingBoxLoader } from "react-spinners";
 import { UserAuthContext } from "../AuthProvider/AuthContext";
@@ -15,9 +14,18 @@ const PrivateRouteProvide = ({ children }) => {
       </div>
     );
   }
-  if (!user) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+
+  if (
+    !user &&
+    (location.pathname === "/login" || location.pathname === "/register")
+  ) {
+    return children;
   }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
   return children;
 };
 
