@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.jpg"; // Adjust path based on file location
 
 import { UserAuthContext } from "../../Provider/AuthProvider/AuthContext";
